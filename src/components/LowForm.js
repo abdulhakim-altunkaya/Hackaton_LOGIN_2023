@@ -37,9 +37,8 @@ function LowForm() {
 
     <div className='smallFormDiv'>
 
-      <h2>SUBMIT YOUR CONTRACT</h2>
-      <p>Before submitting the contract, please make sure you upload only one contract at a time. Do not upload multiple contracts.
-      </p>
+      <h2>SUBMIT PHONE DIALOGUE</h2>
+      <p>Submit the message or upload audio.</p>
       <form onSubmit={handleSubmit} className='contractSubmitForm'>
           <textarea type="text" value={contractCode} onChange={ e => setContractCode(e.target.value) } required></textarea>
           {disableButton7 === true ? 
