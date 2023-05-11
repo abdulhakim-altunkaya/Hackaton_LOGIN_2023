@@ -3,8 +3,6 @@ import React from 'react';
 
 function LowMember() {
 
-
-  
   return (
     <div className='mainLowDiv'>
       <p>Welcome to ScamBusters.pro, the ultimate platform for detecting AI-generated audio and safeguarding yourself against scams. 
