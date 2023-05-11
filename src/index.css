@@ -33,9 +33,6 @@ body {
   border-radius: 9px;
 }
 
-.mainLowDiv{
-
-}
 
 .mainPageImages1{
   width: 30%; /* Set the desired maximum width */
@@ -212,4 +209,23 @@ body {
   box-shadow: 0 2px #666;
   transform: translateY(2px);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #45a049;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
 }

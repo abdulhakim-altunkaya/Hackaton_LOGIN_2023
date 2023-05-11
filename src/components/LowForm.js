@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { Configuration, OpenAIApi } from "openai";
-
+import AudioPlayer from "./AudioPlayer";
 
 function LowForm() {
 
   let[contractCode, setContractCode] = useState("");
   let[responseChatgpt, setResponseChatgpt] = useState("");
-  let[manual, setManual] = useState("block");
   let[disableButton7, setDisableButton7] = useState(false);
 
   const api = process.env.REACT_APP_CHATGPT_API;
@@ -16,7 +15,6 @@ function LowForm() {
 
 
   const handleSubmit = async (e) => {
-    setManual("none");
     e.preventDefault();
     setDisableButton7(true);
 
@@ -63,14 +61,7 @@ function LowForm() {
           
       </form>
       <p>{responseChatgpt}</p>
-      <div style={{display: `${manual}`}}>
-      <strong>To audit contract:</strong> <br />
-      <strong>1.</strong> Make sure you have Metamask in your browser and Fantom testnet inside <br />
-      <strong>2.</strong> Connect this site to your Metamask. <br />
-      <strong>3.</strong> Go to "Token Operations" of website, buy 12 CONTOR for 1 FTM. Then come here to audit your contract. <br />
-      <strong>4.</strong> Copy paste your contract to form area and click "send". Confirm Metamask transaction and wait 25 seconds.
-      Answer will appear here.
-     </div>
+     <AudioPlayer />
     </div>
   )
 }
