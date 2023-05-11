@@ -18,6 +18,8 @@ function LowForm() {
     e.preventDefault();
     setDisableButton7(true);
 
+{/*
+
     const formInput = ` ${contractCode} `;
     const formInput2 = `
     Imagine you are smart contract auditor. Take a look at the contract that I will be sharing below.
@@ -28,7 +30,8 @@ function LowForm() {
     require statement here....". Write 8 to 12 sentences in total. Half of them should be about the vulnerabilities.
     And the other half should be praising the contract code. Do not use repetitive sentences.
     Here is contract: ${contractCode}
-  `;
+  `; 
+*/}
     const response = await openai.createCompletion({
         prompt: "how are you",
         model: "text-davinci-003",
