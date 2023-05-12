@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Configuration, OpenAIApi } from "openai";
-import AudioPlayer from "./AudioPlayer";
 
 function LowForm() {
 

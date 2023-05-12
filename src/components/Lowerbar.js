@@ -3,6 +3,7 @@ import { Route, Routes } from  "react-router-dom";
 
 import LowForm from "./LowForm";
 import LowMember from "./LowMember";
+import AudioPlayer from "./AudioPlayer";
 
 
 function Lowerbar() {
@@ -11,6 +12,7 @@ function Lowerbar() {
           <Routes>
             <Route path="/" element={ <LowMember /> } />
             <Route path="/audit" element={ <LowForm /> } />
+            <Route path="/v2" element={ <AudioPlayer /> } />
           </Routes>
       </div>
   )

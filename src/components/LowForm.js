@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Configuration, OpenAIApi } from "openai";
-import AudioPlayer from "./AudioPlayer";
+
 
 function LowForm() {
 
@@ -17,9 +17,15 @@ function LowForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setDisableButton7(true);
-
+    const formInput2 = `
+    Here is a phone conversation between two people. We are trying to prevent scammers.
+    Can you analyze the phone conversation give one of the following answers: "POTENTIAL SCAMMER",
+    "DEFINETELY A SCAMMER", "SAFE". If you the input you receive is not a phone conversation, then reply
+    by saying "CAN YOU PLEASE SUBMIT A PHONE CONVERSATION?". Please do not write anything else. Only use the words 
+    and sentences I shared. Here is the phone conversation: ${contractCode}
+    `; 
     const response = await openai.createCompletion({
-        prompt: "how are you",
+        prompt: formInput2,
         model: "text-davinci-003",
         temperature: 0,
         max_tokens: 1000
@@ -38,7 +44,6 @@ function LowForm() {
     <div className='smallFormDiv'>
 
       <h2>SUBMIT PHONE DIALOGUE</h2>
-      <p>Submit the message or upload audio.</p>
       <form onSubmit={handleSubmit} className='contractSubmitForm'>
           <textarea type="text" value={contractCode} onChange={ e => setContractCode(e.target.value) } required></textarea>
           {disableButton7 === true ? 
@@ -49,7 +54,6 @@ function LowForm() {
           
       </form>
       <p>{responseChatgpt}</p>
-     <AudioPlayer />
     </div>
   )
 }
