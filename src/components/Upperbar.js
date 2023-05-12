@@ -12,7 +12,7 @@ function Upperbar() {
           </div>
           <div className='upperbarButtonsDiv'>
               <span className='button6' onClick={() => navigate("/")}>HOMEPAGE</span>
-              <span className='button6' onClick={() => navigate("/audit")}>AUDIT AUDIO</span>
+              <span className='button6' onClick={() => navigate("/audit")}>DETECT SCAM</span>
           </div>
       </div>
     )
